@@ -1,0 +1,11 @@
+{
+  "doc_id": "0",
+  "doc_type": "excel",
+  "file_name": "IMU选型参数对比表.xlsx",
+  "tables": [
+    {
+      "sheet": "安全频段",
+      "data": "风机型号和IMU配合项目统计\r\n7K数量，30*\r\nX Y Z谐振频段，\r\n正常运动范围外的，算干扰，\r\n"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "doc_type": "ppt",
+  "file_name": "ERP优化总结方案.pptx",
+  "tables": [
+    {
+      "sheet": "Untitled",
+      "data": "",
+      "rows": [],
+      "text": "整体逻辑：\n\n进入待机功耗：主机在基站外原地不动（暂停、故障、待机等）十分钟后，进入休眠；\n退出待机功耗：外界打断：搬动/按键（任意一个）/app指令；\n\n\n\n主机：\n底板：关闭PSYS、DIS_+5V（P5V_OTHERS）、驱动轮 （含刹车）、风机PWM、左右线激光、LDS、灯效；关闭PA1（指示灯和补光灯前端LDO电源使能）\n核心板：wifi低功耗，卸载camera驱动。\n\n适用平台：所有平台。"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "doc_type": "ppt",
+  "file_name": "50S新器件部件验证进度-20250224.pptx",
+  "tables": [
+    {
+      "sheet": "基站wifi模块",
+      "data": "No.,事项,进度（一供）,备注\r\n1,器件型号,\"04163200000056  乐鑫\nESP8684-WROOM-02C-H2\",\r\n2,器件单体/Demo测试,\"随整机测试R2517：\n功能验证完成，与536主机的WiFi正常配对，\nR2501硬测测试完成\",\r\n3,导入策略（根据项目订单量/生命周期，风险，ROI等综合评估）,X60项目,\r\n4,整体导入计划（在研+量产，导入风险，项目进展，验证计划匹配度等）,\"R2501：\n硬测测试OK\nT0测试OK\n1/30 号EVT：前验证完成；\",关注整机低功耗测试\r\n5,认证,\"CE、FCC、WPC、IC、MIC、SRRC、KCC已出证；\nNCC 已完成，预计本周出证；\",\"IC：https://www.espressif.com/sites/default/files/%20ESP8684-WROOM-02C%20IC%20Certification.pdf\nSRRC：https://www.espressif.com/sites/default/files/ESP8684-WROOM-02C%20SRRC%20Certification.pdf\"\r\n",
+      "rows": [
+        {
+          "No.": "1",
+          "事项": "器件型号",
+          "进度（一供）": "04163200000056  乐鑫\nESP8684-WROOM-02C-H2",
+          "备注": ""
+        },
+        {
+          "No.": "2",
+          "事项": "器件单体/Demo测试",
+          "进度（一供）": "随整机测试R2517：\n功能验证完成，与536主机的WiFi正常配对，\nR2501硬测测试完成",
+          "备注": ""
+        },
+        {
+          "No.": "3",
+          "事项": "导入策略（根据项目订单量/生命周期，风险，ROI等综合评估）",
+          "进度（一供）": "X60项目",
+          "备注": ""
+        },
+        {
+          "No.": "4",
+          "事项": "整体导入计划（在研+量产，导入风险，项目进展，验证计划匹配度等）",
+          "进度（一供）": "R2501：\n硬测测试OK\nT0测试OK\n1/30 号EVT：前验证完成；",
+          "备注": "关注整机低功耗测试"
+        },
+        {
+          "No.": "5",
+          "事项": "认证",
+          "进度（一供）": "CE、FCC、WPC、IC、MIC、SRRC、KCC已出证；\nNCC 已完成，预计本周出证；",
+          "备注": "IC：https://www.espressif.com/sites/default/files/%20ESP8684-WROOM-02C%20IC%20Certification.pdf\nSRRC：https://www.espressif.com/sites/default/files/ESP8684-WROOM-02C%20SRRC%20Certification.pdf"
+        }
+      ],
+      "text": "基站wifi模块\n基站wifi模块---EE陈龙"
+    }
+  ]
+}

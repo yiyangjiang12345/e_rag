@@ -1,0 +1,28 @@
+{
+  "doc_type": "ppt",
+  "file_name": "ERP优化总结方案.pptx",
+  "tables": [
+    {
+      "sheet": "Untitled",
+      "data": "平台,项目,关闭项\r\nMR133,R2427,\"MCU：关闭PSYS（PA11）、DIS_+5V（PE0）、驱动轮（PG6）、PE7（左杀车）、PG15 （右刹车）、PB0（风机PWM），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动\"\r\nMR813,R2416,\"MCU：关闭PSYS（PA11）、DIS_+5V（PE0）、驱动轮（PG6）、PE7（左杀车）、PG15 （右刹车）、PB0（风机PWM），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动\"\r\nMR527,R2473,\"MCU：关闭PSYS（PH12）、驱动轮（PF0）、左杀车（PF1）、右刹车 （PF3）、风机PWM（PD5），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动\"\r\n",
+      "rows": [
+        {
+          "平台": "MR133",
+          "项目": "R2427",
+          "关闭项": "MCU：关闭PSYS（PA11）、DIS_+5V（PE0）、驱动轮（PG6）、PE7（左杀车）、PG15 （右刹车）、PB0（风机PWM），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动"
+        },
+        {
+          "平台": "MR813",
+          "项目": "R2416",
+          "关闭项": "MCU：关闭PSYS（PA11）、DIS_+5V（PE0）、驱动轮（PG6）、PE7（左杀车）、PG15 （右刹车）、PB0（风机PWM），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动"
+        },
+        {
+          "平台": "MR527",
+          "项目": "R2473",
+          "关闭项": "MCU：关闭PSYS（PH12）、驱动轮（PF0）、左杀车（PF1）、右刹车 （PF3）、风机PWM（PD5），关闭灯效\nSOC：WIFI低功耗、卸载CAMERA驱动"
+        }
+      ],
+      "text": "各平台待机功耗配置："
+    }
+  ]
+}

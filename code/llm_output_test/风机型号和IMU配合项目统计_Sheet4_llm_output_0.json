@@ -1,0 +1,35 @@
+{
+  "doc_type": "excel",
+  "file_name": "风机型号和IMU配合项目统计.xlsx",
+  "tables": [
+    {
+      "sheet": "Sheet4",
+      "rows": [
+        {
+          "Column_1": "安全频段",
+          "BMI323": "1.<23Khz\n2.30KHz ~ 34KHz\n3.37KHz ~ 46.5KHz\n4.53KHz ~ 55KHz\n5.62KHz ~ 64KHz\n6.78KHz ~ 82KHz",
+          "ICM40608": "1.0~26.1KHz\n2.29KHz~54.6KHz\n3.57KHz~62.1KHz\n4.68.3KHz~73.1KHz\n5.78KHz~81.1KHz\n6.85.5KHz~86.7KHz\n7.91.8KHz~110KHz",
+          "LSM6DSOW": "1.26.5K~29.5K\n2.32.5K~40.2K\n3.45K~100K",
+          "SH5001": "1、25k-42k\n2、45k-48k\n3、49-54k\n4、55k-58k\n5、61k-64k\n6、65k-68k\n7、76k-83k\n8、103k-158k",
+          "QMI8658B": "\n1、0-1.5k\n2、13.5k-15.5k\n3、31.5k-43.5k\n4、77.5k-88.5k"
+        },
+        {
+          "Column_1": "风机",
+          "BMI323": "20K  40K\n22K  44K\n27K  54K\n31.5K  63K\n40k  80k",
+          "ICM40608": "20K  40K\n22K  44K\n25K  50K\n27K  54K\n30K  60K\n40k  80k",
+          "LSM6DSOW": "25K  50K\n27K  54K\n30K  60K\n31.5K  63K\n40k  80k",
+          "SH5001": "20k 40k\n25K 50K\n\n31.5k 63k\n40k 80k",
+          "QMI8658B": "20K  40K\n\n40k  80k"
+        },
+        {
+          "Column_1": "外设电机频率与323兼容",
+          "BMI323": "15k 16k 20k 25k 31k  32k ",
+          "ICM40608": "",
+          "LSM6DSOW": "33k",
+          "SH5001": "31k 32k 33k",
+          "QMI8658B": "15k 32k 33k"
+        }
+      ]
+    }
+  ]
+}
