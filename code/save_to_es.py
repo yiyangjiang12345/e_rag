@@ -73,7 +73,7 @@ class Elastic(object):
     def bulk_index_data(
         self,
         name,
-        database="excel_data",  
+        database="e_rag",  
         batch_size=64,
     ):
         """
@@ -146,7 +146,69 @@ class Elastic(object):
             },
         }
         result = self.client.search(index=name, body=dsl_text)
-        file_names = [x["_source"]["file_name"] for x in result["hits"]["hits"]]
-        sheet_names = [x["_source"]["sheet_name"] for x in result["hits"]["hits"]]
-        json_contents = [x["_source"]["json_content"] for x in result["hits"]["hits"]]
-        return file_names, sheet_names, json_contents
+        hits = result["hits"]["hits"]
+        file_names = [x["_source"]["file_name"] for x in hits]
+        sheet_names = [x["_source"]["sheet_name"] for x in hits]
+        json_contents = [x["_source"]["json_content"] for x in hits]
+        scores = [x["_score"] for x in hits]
+        return file_names, sheet_names, json_contents, scores
+
+    def search_and_build_context(self, name, text):
+        """
+        搜索并构建上下文，用于 RAG 输入
+        参数：
+        - name: ES 索引名称
+        - text: 查询关键词
+        返回：
+        - context: 构建好的上下文字符串
+        - doc_sources: 检索到的文档来源列表 [(file_name, sheet_name), ...]
+        """
+        # 步骤 1：从 ES 查询
+        file_names, sheet_names, json_contents, scores = self.search_by_text(name, text)
+        if not file_names:
+            return "未找到相关内容", []
+
+        # 步骤 2：按得分排序
+        results = [
+            {"file_name": fn, "sheet_name": sn, "content": jc, "score": s}
+            for fn, sn, jc, s in zip(file_names, sheet_names, json_contents, scores)
+        ]
+        results.sort(key=lambda x: x["score"], reverse=True)
+
+        # 步骤 3：动态召回
+        selected_results = []
+        doc_sources = []  # 存储文档来源
+        total_length = 0
+        min_length = 50000  # 最小长度
+        max_length = 60000  # 最大长度
+
+        # 默认取前 5 个结果
+        for i in range(min(5, len(results))):
+            result = results[i]
+            part = f"[来源: {result['file_name']}_{result['sheet_name']}]\n{result['content']}"
+            selected_results.append(part)
+            doc_sources.append((result['file_name'], result['sheet_name']))
+            total_length += len(part)
+
+        # 如果总长度 < 50000，继续取下一个，直到接近 60000
+        if total_length < min_length:
+            for i in range(5, len(results)):
+                result = results[i]
+                part = f"[来源: {result['file_name']}_{result['sheet_name']}]\n{result['content']}"
+                part_length = len(part)
+
+                if total_length + part_length > max_length:
+                    remaining_length = max_length - total_length
+                    if remaining_length > 0:
+                        part = part[:remaining_length] + "..."
+                        selected_results.append(part)
+                        doc_sources.append((result['file_name'], result['sheet_name']))
+                    break
+
+                selected_results.append(part)
+                doc_sources.append((result['file_name'], result['sheet_name']))
+                total_length += part_length
+
+        # 步骤 4：用分隔符拼接
+        context = "   ---   ".join(selected_results)
+        return context, doc_sources

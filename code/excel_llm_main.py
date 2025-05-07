@@ -93,7 +93,7 @@ def main():
     output_dir = "llm_output_test"  # 存储大模型校对后文件的目录
 
     # 字符数限制
-    CHARACTER_LIMIT = 70000  # 字符数超过 70000 时跳过大模型处理
+    CHARACTER_LIMIT = 20000  # 字符数超过 70000 时跳过大模型处理
 
     # 确保输入目录存在
     if not os.path.exists(input_dir):

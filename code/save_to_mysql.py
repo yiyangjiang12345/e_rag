@@ -13,7 +13,7 @@ def connect_to_mysql():
             host="10.10.37.77",
             user="root",
             password="TF123456",
-            database="excel_data",
+            database="e_rag",
             charset="utf8mb4"
         )
         if connection.is_connected():

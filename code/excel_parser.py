@@ -114,11 +114,11 @@ class ExcelParser:
 
         return self.result
 
-    def split_into_chunks_by_rows(self, table: Dict[str, Any], target_char_limit: int = 60000) -> List[Dict[str, Any]]:
+    def split_into_chunks_by_rows(self, table: Dict[str, Any], target_char_limit: int = 10000) -> List[Dict[str, Any]]:
         """
         将 table 的 rows 均分成多个 chunk，使每个 chunk 的字符数接近 target_char_limit。
         :param table: 单个 table 字典，包含 sheet, data, rows
-        :param target_char_limit: 目标字符数限制，默认为 60000
+        :param target_char_limit: 目标字符数限制，默认为 10000
         :return: 分割后的 table 列表
         """
         sheet_name = table["sheet"]
@@ -179,7 +179,7 @@ class ExcelParser:
 
         return chunks
 
-    def save_sheets_to_files(self, output_dir: str = "output", target_char_limit: int = 60000):
+    def save_sheets_to_files(self, output_dir: str = "output", target_char_limit: int = 10000):
         """
         将每个 sheet 的数据保存为单独的 JSON 文件。
         - 如果需要分块，文件名为“excel文件名_sheet名称数字_0.json”。
